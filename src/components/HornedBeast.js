@@ -7,6 +7,8 @@ import btn from 'react-bootstrap/Button'
 import Image from 'react-bootstrap/Image'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
+import model from 'react-bootstrap/Modal'
+
 class HornedBeast extends React.Component {
 
 
@@ -23,6 +25,9 @@ class HornedBeast extends React.Component {
 
     }
 
+
+
+
     render() {
 
 
@@ -32,7 +37,7 @@ class HornedBeast extends React.Component {
 <Row xs={1} md={4} className="g-4">
 
 <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src={this.props.imgUrl} />
+  <Card.Img variant="top" src={this.props.imgUrl}  onClick={this.Example}/>
   <Card.Body>
     <Card.Title>Title : {this.props.title}</Card.Title>
     <Card.Text>
@@ -48,29 +53,6 @@ class HornedBeast extends React.Component {
 </Card>
 
   </Row>
-
-
-                {/* <Card border="primary" style={{ width: '18rem' }}>
-                    <Card.Header> <h2>{this.props.title}</h2></Card.Header>
-                    <Card.Body>
-                        <Card.Title></Card.Title>
-                        <Card.Text>
-                       
-
-                        <Col xs={6} md={4}>
-      <Image src={this.props.imgUrl} alt="horns" title="This is horns animals" roundedCircle />
-    </Col>
-
-
-                <p>
-                    {this.props.description}</p>
-
-                        </Card.Text>
-                        <Button variant="light" onClick='incrementOfClicks' >Light</Button>
-                      
-                    </Card.Body>
-                </Card>
-                <br /> */}
 
                
                 
