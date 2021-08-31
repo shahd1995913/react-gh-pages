@@ -1,14 +1,14 @@
 import React from 'react';
 import horns from '../components/caribou.webp'
 
-class Div extends React.Component{
+class HornedBeast extends React.Component{
 
 render(){
 
 return(
 <>
 <h2>{this.props.title}</h2>
-<img src={this.src.imgUrl} alt="horns" title="This is horns animals"></img>
+<img src={this.props.imgUrl} alt="horns" title="This is horns animals"></img>
 <p>
 {this.props.description}</p>
 </>
@@ -20,4 +20,4 @@ return(
 
 }
 
-export default Div;
+export default HornedBeast;
