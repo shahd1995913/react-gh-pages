@@ -16,13 +16,7 @@ return(
 <>
 <Header></Header>
 <Main>  
-    
-<HornedBeast
-  title={item.title}
-   imgUrl={item.image_url}
-   description={item.description}
 
-   />)
 
 </Main>
 <Footer></Footer>

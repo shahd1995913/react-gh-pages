@@ -9,61 +9,50 @@ import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import model from 'react-bootstrap/Modal'
 
+
+
 class HornedBeast extends React.Component {
 
-
     constructor(props) {
-        super(props);
-        this.state = { NumberOfClick: 0 }
-
+        super(props)
+        this.state = {
+            numOfVotes: 0,
+            heart: '❤️'
+            
+        }
     }
 
+     
+    
 
-    incrementOfClicks = () => {
-
-        this.setState({ NumberOfClick: this.state.NumberOfClick + 1 })
-
-    }
-
-
-
+    gotVoted = () => {
+        this.setState({
+            numOfVotes: this.state.numOfVotes + 1
+        });
+        this.props.handleClose();
+        this.props.takeData(this.props.title)
+    };
 
     render() {
-
-
         return (
-            <>
+            <div style={{display : 'inline-block' }} >
 
-<Row xs={1} md={4} className="g-4">
+                <Card style={{ margin : '15px', width: '18rem', display : 'inline-block' }} >
+                    <Card.Img variant="top" style={{height : '20rem' }}  onClick={this.gotVoted} src={this.props.imgUrl} />
+                    <Card.Body>
+                        <Card.Title>{this.props.title}</Card.Title>
+                        <Card.Text>
+                         {this.props.description}
+                         <h4>{this.state.heart.repeat(this.state.numOfVotes)} : {this.state.numOfVotes}</h4>
+                        </Card.Text>     
+                        {/* <Button variant="primary">Go somewhere</Button>                    */}
+                    </Card.Body>
+                </Card>
 
-<Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src={this.props.imgUrl}  onClick={this.Example}/>
-  <Card.Body>
-    <Card.Title>Title : {this.props.title}</Card.Title>
-    <Card.Text>
-    NumberOfClick :  {this.state.NumberOfClick}
-    </Card.Text>
-
-    <Card.Text>
-      {this.props.description}
-    </Card.Text>
-    
-    <Button variant="primary" onClick={this.incrementOfClicks}>Add to favierate</Button>
-  </Card.Body>
-</Card>
-
-  </Row>
-
-               
-                
-               
-            </>
-
-
+            </div>
         )
-
     }
-
 }
+
 
 export default HornedBeast;
