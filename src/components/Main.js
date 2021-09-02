@@ -18,8 +18,7 @@ class Main extends React.Component {
 
             });
         } else {
-            let newArrOfBeast = this.props.cardsBeasts.filter(element => { return 
-              (JSON.stringify(element.horns) === cornValue) })
+            let newArrOfBeast = this.props.cardsBeasts.filter(element => { return (JSON.stringify(element.horns) === cornValue) })
             this.setState({
                 displayedImg: newArrOfBeast,
 
