@@ -7,50 +7,40 @@ import btn from 'react-bootstrap/Button'
 import Image from 'react-bootstrap/Image'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
-import model from 'react-bootstrap/Modal'
+import Modal from 'react-bootstrap/Modal'
 
-s
+
+
 class SelectedBeast extends React.Component {
+    
 
 
     render() {
+        console.log(this.props)         
+            
+            return (
 
+            <div>
 
-        return (
-            <>
+                <Modal show={this.props.show} onHide={this.props.handleClose}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>{this.props.selctedImg.title}</Modal.Title>
+                    </Modal.Header>
+                    <div>
 
-        
-
-<Modal.Dialog>
-  <Modal.Header closeButton>
-    <Modal.Title>Title : {this.props.title}</Modal.Title>
-  </Modal.Header>
-
-  <Modal.Body>
-    
-    <img variant="top" src={this.props.imgUrl}></img>
-    <p> {this.props.description}</p>
-  </Modal.Body>
-
-  <Modal.Footer>
-    <Button variant="secondary">Close</Button>
-    {/* <Button variant="primary">Save changes</Button> */}
-  </Modal.Footer>
-</Modal.Dialog>
-
-               
-                          
-            </>
-
-
+                        <img src={this.props.selctedImg.image_url} className='imgInModel' />
+                        <Modal.Body>
+                           {this.props.selctedImg.description}
+                        </Modal.Body>
+                    </div>
+                    <Modal.Footer>
+                        {}
+                    </Modal.Footer>
+                </Modal>
+            </div>
         )
 
     }
-
 }
 
-export default SelectedBeast ;
-
-
-
-
+export default SelectedBeast;
